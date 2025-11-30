@@ -10,3 +10,14 @@ Order ID: 10001 | User ID: 1001 | Date: 2025-11-12 22:18:51 | Total: ₹100.00 |
 Order ID: 10001 | User ID: 1001 | Date: 2025-11-12 22:22:09 | Total: ₹150000000.00 | Items: Pav Bhaji(x1000000) | Delivery Time: 58 minutes
 Order ID: 10002 | User ID: 1002 | Date: 2025-11-12 22:37:28 | Total: ₹660.00 | Items: Paneer Tikka(x3) | Delivery Time: 29 minutes
 Order ID: 10001 | User ID: 1001 | Date: 2025-11-12 22:45:36 | Total: ₹100.00 | Items: Samosa(x2) | Delivery Time: 58 minutes
+Order ID: 10002 | User ID: 1001 | Date: 2025-11-12 23:06:20 | Total: ₹2520.00 | Items: Biryani(x9) | Delivery Time: 41 minutes
+Order ID: 10001 | User ID: 1001 | Date: 2025-11-13 09:17:35 | Total: ₹280.00 | Items: Biryani(x1) | Delivery Time: 55 minutes
+Order ID: 10001 | User ID: 1001 | Date: 2025-11-13 09:23:16 | Total: ₹1760.00 | Items: Paneer Tikka(x8) | Delivery Time: 59 minutes
+Order ID: 10002 | User ID: 1001 | Date: 2025-11-13 09:25:38 | Total: ₹240.00 | Items: Vada Pav(x3) | Delivery Time: 59 minutes
+Order ID: 10001 | User ID: 1001 | Date: 2025-12-01 00:46:21 | Total: ₹350.00 | Items: Butter Chicken(x1) | Delivery Time: 29 minutes
+Order ID: 10001 | User ID: 1001 | Date: 2025-12-01 02:39:25 | Total: ₹2120.00 | Items: Dal Makhani(x4) Gulab Jamun(x3) Chole Bhature(x5) | Delivery Time: 57 minutes
+Order ID: 10001 | User ID: 1001 | Date: 2025-12-01 02:49:10 | Total: Rs.1840.00 | Items: Dal Makhani(x4) Gulab Jamun(x4) Chole Bhature(x3) | Delivery Time: 52 minutes
+Order ID: 10001 | User ID: 1001 | Date: 2025-12-01 03:01:39 | Total: Rs.3700.00 | Items: Brownie(x8) Chole Bhature(x6) Chilli Paneer(x7) | Delivery Time: 19 minutes
+Order ID: 10001 | User ID: 1001 | Date: 2025-12-01 03:09:11 | Total: Rs.304.00 | Items: Dal Makhani(x2) | Delivery Time: 16 minutes
+Order ID: 10001 | User ID: 1001 | Date: 2025-12-01 03:14:10 | Total: Rs.400.00 | Items: Chole Bhature(x2) | Delivery Time: 25 minutes
+Order ID: 10002 | User ID: 1001 | Date: 2025-12-01 03:15:17 | Total: Rs.5180.00 | Items: Dal Makhani(x10) Chole Bhature(x3) Uttapam(x13) Gulab Jamun(x5) | Delivery Time: 21 minutes

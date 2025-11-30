@@ -11,8 +11,8 @@ float calculateBill() {
 
 // Function to generate random delivery time
 int generateDeliveryTime() {
-    // Generate random time between 20-60 minutes
-    return 20 + rand() % 41;
+    // Generate random time between 15-45 minutes
+    return 15 + rand() % 31;
 }
 
 // Function to checkout and place order
@@ -23,11 +23,40 @@ void checkout() {
     printf("\n===== BILL DETAILS =====\n");
     for(int i = 0; i < cartCount; i++) {
         float itemTotal = cart[i].price * cart[i].quantity;
-        printf("%s - ₹%.2f x %d = ₹%.2f\n", 
+        printf("%s - Rs.%.2f x %d = Rs.%.2f\n", 
                cart[i].itemName, cart[i].price, cart[i].quantity, itemTotal);
     }
-    printf("TOTAL: ₹%.2f\n", total);
+    printf("TOTAL: Rs.%.2f\n", total);
     printf("Estimated Delivery Time: %d minutes\n", deliveryTime);
+    
+    // Voucher Logic
+    int hasVoucher;
+    printf("\nDo you have a voucher code? (1 for Yes, 0 for No): ");
+    if(scanf("%d", &hasVoucher) == 1 && hasVoucher == 1) {
+        char code[20];
+        printf("Enter voucher code: ");
+        scanf("%s", code);
+        
+        float discount = 0;
+        if(strcmp(code, "TASTY20") == 0) {
+            discount = total * 0.20;
+            printf("Voucher Applied! 20%% Discount.\n");
+        } else if(strcmp(code, "SAVE10") == 0) {
+            discount = total * 0.10;
+            printf("Voucher Applied! 10%% Discount.\n");
+        } else if(strcmp(code, "FREEMEAL") == 0) {
+            discount = total;
+            printf("Voucher Applied! 100%% Discount (Lucky You!).\n");
+        } else {
+            printf("Invalid voucher code.\n");
+        }
+        
+        if(discount > 0) {
+            total -= discount;
+            printf("Discount Amount: Rs.%.2f\n", discount);
+            printf("NEW TOTAL: Rs.%.2f\n", total);
+        }
+    }
     
     // Clear the input buffer before reading confirmation
     while(getchar() != '\n');
@@ -74,24 +103,24 @@ void checkout() {
         
         // Special greeting and offer messages
         const char* greetings[] = {
-            "धन्यवाद! आपका ऑर्डर सफलतापूर्वक स्थापित किया गया है!",
             "Thank you! Your order has been successfully placed!",
-            "शुक्रिया! आपला ऑर्डर यशस्वीरित्या स्थापित केला गेला आहे!",
-            "ধন্যবাদ! আপনার অর্ডারটি সফলভাবে স্থাপন করা হয়েছে!"
+            "Order received! We are preparing your food.",
+            "Great choice! Your meal is on its way.",
+            "Thanks for ordering with Annayatra!"
         };
         
         const char* quotes[] = {
-            "खाना खाओ और खुश रहो!",
+            "Good food is good mood!",
             "Food is the ingredient that binds us together.",
             "In food we trust, in flavor we believe.",
             "Life is uncertain. Eat dessert first."
         };
         
         const char* offers[] = {
-            "अगले ऑर्डर पर 10%% की छूट पाएं!",
-            "Get 10%% off on your next order!",
-            "Order one more time and get a free dessert!",
-            "Refer a friend and get ₹100 in your wallet!"
+            "Use code SAVE10 for 10%% off your next order!",
+            "Use code TASTY20 for 20%% off next time!",
+            "Use code FREEMEAL for a free meal next time!",
+            "Use code SAVE10 to get a discount on your next craving!"
         };
         
         // Generate random indices
@@ -102,7 +131,7 @@ void checkout() {
         printf("========== SPECIAL MESSAGE FOR YOU ==========\n");
         printf("%s\n\n", greetings[greetIndex]);
         printf("\"%s\"\n\n", quotes[quoteIndex]);
-        printf("🎉 SPECIAL OFFER: %s\n", offers[offerIndex]);
+        printf("YAY! SPECIAL OFFER: %s\n", offers[offerIndex]);
         printf("============================================\n");
     } else {
         printf("Order cancelled.\n");
@@ -129,7 +158,7 @@ void saveOrderToLog(Order order) {
         return;
     }
     
-    fprintf(fp, "Order ID: %d | User ID: %d | Date: %s | Total: ₹%.2f | Items: ",
+    fprintf(fp, "Order ID: %d | User ID: %d | Date: %s | Total: Rs.%.2f | Items: ",
             order.orderId, order.userId, order.orderDate, order.totalAmount);
     
     for(int i = 0; i < order.numItems; i++) {

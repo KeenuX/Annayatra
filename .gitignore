@@ -1,0 +1,11 @@
+# Build artifacts
+*.exe
+*.o
+
+# Data files
+*.dat
+*.txt
+
+# IDE/Editor files
+.vscode/
+.idea/

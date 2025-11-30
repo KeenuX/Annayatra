@@ -72,15 +72,16 @@ void viewCart() {
     for(int i = 0; i < cartCount; i++) {
         float itemTotal = cart[i].price * cart[i].quantity;
         total += itemTotal;
-        printf("%d. %s - ₹%.2f x %d = ₹%.2f\n", 
+        printf("%d. %s - Rs.%.2f x %d = Rs.%.2f\n", 
                i+1, cart[i].itemName, cart[i].price, cart[i].quantity, itemTotal);
     }
     
-    printf("TOTAL: $%.2f\n", total);
+    printf("TOTAL: Rs.%.2f\n", total);
     
     int choice;
     printf("\n1. Continue shopping\n");
     printf("2. Clear cart\n");
+    printf("3. Checkout\n");
     printf("Enter your choice: ");
     if(scanf("%d", &choice) != 1) {
         printf("Invalid input!\n");
@@ -92,5 +93,7 @@ void viewCart() {
     if(choice == 2) {
         cartCount = 0;
         printf("Cart cleared!\n");
+    } else if(choice == 3) {
+        checkout();
     }
 }

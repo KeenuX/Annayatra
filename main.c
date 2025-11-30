@@ -1,5 +1,6 @@
 #include "food_ordering_system.h"
 
+
 // Global variables
 User currentUser;
 Restaurant restaurants[MAX_RESTAURANTS];
@@ -16,7 +17,7 @@ int main() {
     int choice;
     
     while(1) {
-        printf("\n===== Annayatra (अन्नयात्रा) =====\n");
+        printf("\n===== Annayatra =====\n");
         printf("1. Register\n");
         printf("2. Login\n");
         printf("3. Exit\n");

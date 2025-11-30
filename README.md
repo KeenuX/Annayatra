@@ -4,12 +4,27 @@ A command-line C application that simulates an online Indian food ordering platf
 
 ## Features
 
-- User registration and login system
-- Indian restaurant browsing with authentic menus
-- Dynamic shopping cart with memory management
-- Order placement with billing in Rupees (₹) and delivery time estimation
-- Personalized greetings, quotes, and special offers after successful orders
-- Persistent data storage using binary files and text logs
+- **User System**: Secure registration and login functionality.
+- **Expanded Menu**: Browse **8 different restaurants** offering diverse cuisines:
+    - North Indian
+    - South Indian
+    - Street Food
+    - Italian
+    - Chinese
+    - Fast Food
+    - Desserts
+- **Smart Cart**: Dynamic shopping cart with memory management to handle multiple items.
+- **Voucher System**: Apply discount codes during checkout to save money.
+- **Optimized Delivery**: Realistic delivery time estimation (15-45 minutes).
+- **Order Processing**: Detailed billing in **Rs.** with order confirmation.
+- **Persistent Storage**: Uses binary files (`.dat`) for data and text files (`.txt`) for logs.
+
+## Voucher Codes
+
+Save on your orders with these valid voucher codes:
+- `TASTY20`: **20% OFF**
+- `SAVE10`: **10% OFF**
+- `FREEMEAL`: **100% OFF** (Free Meal)
 
 ## Project Structure
 
@@ -21,72 +36,46 @@ A command-line C application that simulates an online Indian food ordering platf
 ├── restaurant_management.c # Restaurant and menu handling
 ├── cart_management.c       # Shopping cart functionality
 ├── order_processing.c      # Order processing and storage
-├── Makefile                # Build automation
 └── README.md               # This file
 ```
 
-## Requirements
+## Compilation & Running
 
-- GCC compiler (MinGW on Windows)
-- C99 standard support
+### Prerequisites
+- GCC compiler (MinGW on Windows recommended)
 
-## Compilation
-
-### Using Makefile (Recommended)
+### Compile
+Open your terminal/command prompt in the project directory and run:
 ```bash
-make
+gcc main.c user_management.c restaurant_management.c cart_management.c order_processing.c -o food_ordering_system
 ```
 
-### Direct Compilation
+### Run
 ```bash
-gcc -Wall -Wextra -std=c99 -o food_ordering_system main.c user_management.c restaurant_management.c cart_management.c order_processing.c
+.\food_ordering_system.exe
 ```
 
-## Running the Program
+## Usage Guide
 
-### Using Makefile
-```bash
-make run
-```
-
-### Direct Execution
-```bash
-./food_ordering_system.exe
-```
-
-## Usage
-
-1. **Register** - Create a new user account
-2. **Login** - Access the system with existing credentials
-3. **Browse Restaurants** - View available restaurants and their menus
-4. **Add Items to Cart** - Select menu items and quantities
-5. **View Cart** - Review selected items and total cost
-6. **Checkout** - Place order and receive delivery estimate
-7. **Logout** - End session
+1.  **Register**: Create a new account.
+2.  **Login**: Log in with your credentials.
+3.  **Browse**: Select a restaurant and view its menu (6 items per restaurant).
+4.  **Order**: Add items to your cart.
+5.  **Checkout**: 
+    - Review your bill.
+    - Enter a **Voucher Code** if you have one.
+    - Confirm your order.
+6.  **Enjoy**: Receive your estimated delivery time and a special offer for next time!
 
 ## Data Storage
 
-- `users.dat` - Binary file storing registered user information
-- `orders.dat` - Binary file storing order history
-- `order_log.txt` - Text file with human-readable order logs
+- `users.dat`: Stores user credentials (Binary).
+- `orders.dat`: Stores order history (Binary).
+- `order_log.txt`: Human-readable log of all orders.
 
-## Technical Implementation
+## Technical Highlights
 
-- **Data Structures**: Users, Restaurants, Menu Items, Cart Items, and Orders
-- **Dynamic Memory**: realloc for expanding cart capacity
-- **File Handling**: Binary files for efficient data storage, text files for readable logs
-- **Input Validation**: Robust input handling with error checking
-- **Modular Design**: Separation of concerns across multiple source files
-- **Localization**: Indian cuisine with prices in Rupees (₹)
-- **Personalization**: Randomized greetings, quotes, and special offers for each customer
-
-## Academic Requirements Met
-
-This project satisfies all requirements for the Computer Programming course:
-- Use of structures for organized data management
-- Dynamic memory allocation with realloc
-- File handling in both binary and text modes
-- String manipulation with strcmp, strcpy
-- Implementation of filtering/search functionality
-- Time logic for delivery estimation
-- Indian localization with regional languages and currency
+- **Modular C Code**: Split across multiple files for better maintainability.
+- **Structs & Arrays**: Used for managing complex data like menus and orders.
+- **File I/O**: robust handling of binary and text files.
+- **Randomization**: Used for delivery times and special offer messages.
